@@ -10,7 +10,7 @@ import { lightTheme, darkTheme } from './theme/themeColors';
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const isDark = true;
+const isDark = false;
 function App() {
   const store = createStore(
     rootReducer,
