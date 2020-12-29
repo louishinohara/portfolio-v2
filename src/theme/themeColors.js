@@ -36,7 +36,7 @@ export const lightTheme = {
 export const darkTheme = {
   ...lightTheme,
   palette: {
-    // ...lightTheme.palette,
+    ...lightTheme.palette,
     type: 'dark',
     base:{
       color: customColor,

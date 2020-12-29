@@ -12,14 +12,17 @@ import {
 } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
 import myImg from '../assets/img/test1.jpg'
-const part1 = "Hello I'm,";
+
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
+const part1 = "Hey I'm,";
 const name = "Louis Shinohara";
 const description1 = "I'm a ";
 const R = 'R  ';
 const U = 'U'
 const description2 = 'student and aspiring ';
 const SWE = ' Software Engineer';
-const period = ".";
+const period = "";
 
 function LandingPage() {
   const classes = landingPageStyles();
@@ -28,17 +31,22 @@ function LandingPage() {
       container
       direction="column"
       className={classes.body}
-      justify="center"
+      justify="space-between"
       alignItems="center"
     >
-      <Grid item>
+        {/* Little Trick To Have A Third Item In Column  */}
+        <Grid item> 
+        <Text></Text> 
+        </Grid>
+        <Grid item>
+        <Grid item>
         <Grid container alignItems='center' justify='center' >
-          <Grid item>
+          {/* <Grid item>
             <Text className={classes.mainText} >{part1}</Text>
           </Grid>
           <Grid item>
             <Text className={classes.mainText} >{" "}</Text>
-          </Grid>
+          </Grid> */}
           <Grid item>
             <Text className={classes.name}>{name} </Text>
           </Grid>
@@ -51,12 +59,12 @@ function LandingPage() {
       <Grid item>
       <Grid container alignItems='center' justify='center' >
 
-          <Grid item>
+          {/* <Grid item>
             <Text className={classes.mainText} >{description1}</Text>
           </Grid>
           <Grid item>
             <Text className={classes.mainText} >{" "}</Text>
-          </Grid>
+          </Grid> */}
           <Grid item>
             <Text className={classes.R}>{R} </Text>
           </Grid>
@@ -80,6 +88,13 @@ function LandingPage() {
           </Grid>
         </Grid>
  
+      </Grid>
+        </Grid>
+     
+      <Grid item className={classes.iconButton}>
+          <IconButton>
+              <KeyboardArrowDownIcon />
+          </IconButton>
       </Grid>
     </Grid>
   );
@@ -137,6 +152,9 @@ const landingPageStyles = makeStyles((theme) =>
         color: 'white',
         fontSize: '2.85vw',
         fontWeight: '500',
+    },
+    iconButton: {
+        paddingBottom: 16
     }
   })
 );
