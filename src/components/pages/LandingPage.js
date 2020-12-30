@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  IconButton,
-  Typography as Text,
-  Grid,
-} from "@material-ui/core";
+import { IconButton, Typography as Text, Grid } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
 import myImg from "../../assets/img/test1.jpg";
 
@@ -36,7 +32,6 @@ function LandingPage() {
       <Grid item>
         <Grid item>
           <Grid container alignItems="center" justify="center">
-
             <Grid item>
               <Text className={classes.name}>{name} </Text>
             </Grid>
@@ -140,9 +135,9 @@ const landingPageStyles = makeStyles((theme) =>
     iconButton: {
       paddingBottom: 16,
     },
-    downIcon:{
+    downIcon: {
       color: theme.palette.base.color.dimGray,
-      fontSize: 42
-    }
+      fontSize: 42,
+    },
   })
 );

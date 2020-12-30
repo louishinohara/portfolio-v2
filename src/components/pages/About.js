@@ -1,17 +1,31 @@
 import React from "react";
-import {
-    Typography as Text,
-    Grid,
-  } from "@material-ui/core";
-  import { makeStyles, createStyles } from "@material-ui/styles";
-  
+import { Typography as Text, Grid, Card, CardMedia } from "@material-ui/core";
+import { makeStyles, createStyles } from "@material-ui/styles";
+
+import me from "../../assets/img/me.JPG";
+
 function AboutPage() {
   const classes = aboutPageStyles();
   return (
     <div className={classes.body} id="about">
-      <Grid container>
+      <Grid container justify="center" alignItems="center">
         <Grid item>
-          <Text className={classes.test}>About</Text>
+          <Card>
+            <CardMedia className={classes.media} image={me}></CardMedia>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item className={classes.nameBody}>
+              <Text className={classes.nameText}>Ushio Louis Shinohara</Text>
+            </Grid>
+            <Grid item className={classes.majorBody}>
+            <Text className={classes.majorText}>Electrical and Computer Engineering and Computer Science Student</Text>
+            </Grid>
+            <Grid item>
+              <Text>aaa</Text>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </div>
@@ -28,7 +42,30 @@ const aboutPageStyles = makeStyles((theme) =>
     test: {
       backgroundColor: theme.palette.base.backgroundColor,
       fontSize: 50,
-      color: '#f7f8f9'
+      color: "#f7f8f9",
     },
+    media: {
+      // maxHeight: "100%",
+      // width: "100%",
+      height: "200px",
+      width: "400px",
+      objectFit: 'contain'
+    },
+    nameBody:{
+      marginLeft: 16
+    },
+    nameText:{
+      fontSize: 44,
+      color: theme.palette.base.color.dimGray,
+      fontWeight: '600'
+    },
+    majorBody:{
+      marginLeft: 16
+    },
+    majorText:{
+      fontSize: 24,
+      color: theme.palette.base.color.dimGray,
+      fontWeight: '500'
+    }
   })
 );
