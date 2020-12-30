@@ -11,9 +11,9 @@ import {
 } from "@material-ui/core";
 import { drawerWidth, isMobile } from "../constants/constants";
 import CustomDrawer from "./Drawer";
+import { Link } from "../constants/constants";
 
-import clsx from "clsx";
-import MenuIcon from "@material-ui/icons/Menu";
+import Resume from "../assets/resume/Resume.pdf";
 
 import AppBarButton from "./reusable/appBarButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -23,56 +23,72 @@ import DescriptionIcon from "@material-ui/icons/Description";
 export default function MyAppBar() {
   const classes = appBarStyles();
   const [open, setOpen] = React.useState(false);
+  const [linkedInHover, setLinkedInHover] = React.useState(false);
+  const [gitHubHover, setGitHubHover] = React.useState(false);
+
+  const [resumeHover, setResumeHover] = React.useState(false);
 
   const handleDrawer = () => {
     setOpen(!open);
   };
 
+  const hoverLinkedIn = () => {
+    setLinkedInHover(!linkedInHover);
+  };
+  const hoverGitHub = () => {
+    setGitHubHover(!gitHubHover);
+  };
+  const hoverResume = () => {
+    setResumeHover(!resumeHover);
+  };
+
   return (
-    <div className={classes.grow}>
+    <div id="appBar">
       <AppBar
-        position="static"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
+        // position="fixed"
+        position="sticky"
+        className={classes.appBar}
       >
         <Toolbar>
-          {/* <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => handleDrawer()}
-          >
-            <MenuIcon className={classes.menuButton} />
-          </IconButton> */}
-
           <Grid container alignItems="center" justify="space-between">
-            {/* <Grid item>
-              <Text className={classes.title} variant="h6" noWrap>
-                Louis Shinohara
-              </Text>
-            </Grid> */}
             {/* START MENU TEXT */}
 
             <Grid item>
               <Grid container>
                 <Grid item className={classes.menuTextContainer}>
-                  <Text className={classes.menuText}>Home</Text>
+                  <Link
+                    to="#landing"
+                    smooth
+                    activeClassName="selected"
+                    activeStyle={{ color: "red" }}
+                  >
+                    <Text className={classes.menuText}>Home</Text>
+                  </Link>
                 </Grid>
                 <Grid item className={classes.menuTextContainer}>
-                  <Text className={classes.menuText}>About</Text>
+                  <Link to="#about" smooth>
+                    <Text className={classes.menuText}>About</Text>
+                  </Link>
                 </Grid>
                 <Grid item className={classes.menuTextContainer}>
-                  <Text className={classes.menuText}>Projects</Text>
+                  <Link to="#projects" smooth>
+                    <Text className={classes.menuText}>Projects</Text>
+                  </Link>
                 </Grid>
                 <Grid item className={classes.menuTextContainer}>
-                  <Text className={classes.menuText}>Skills</Text>
+                  <Link to="#skills" smooth>
+                    <Text className={classes.menuText}>Skills</Text>
+                  </Link>
                 </Grid>
                 <Grid item className={classes.menuTextContainer}>
-                  <Text className={classes.menuText}>Experience</Text>
+                  <Link to="#experience" smooth>
+                    <Text className={classes.menuText}>Experience</Text>
+                  </Link>
                 </Grid>
                 <Grid item className={classes.menuTextContainer}>
-                  <Text className={classes.menuText}>Contact</Text>
+                  <Link to="#contact" smooth>
+                    <Text className={classes.menuText}>Contact</Text>
+                  </Link>
                 </Grid>
               </Grid>
             </Grid>
@@ -82,10 +98,29 @@ export default function MyAppBar() {
             {isMobile ? null : (
               <Grid item>
                 <Grid container>
-                  <Grid item>
+                  <Grid
+                    item
+                    onMouseOver={hoverLinkedIn}
+                    className={classes.gridItem}
+                  >
                     <AppBarButton
-                      text={<Text className={classes.text}>LinkedIn</Text>}
-                      icon={<LinkedInIcon className={classes.icon} />}
+                      text={
+                        <Text
+                          className={
+                            linkedInHover ? classes.textHover : classes.text
+                          }
+                        >
+                          LinkedIn
+                        </Text>
+                      }
+                      icon={
+                        <LinkedInIcon
+                          className={
+                            linkedInHover ? classes.iconHover : classes.icon
+                          }
+                        />
+                      }
+                      url={"https://www.linkedin.com/in/louishinohara/"}
                     />
                   </Grid>
                   <Divider
@@ -94,10 +129,29 @@ export default function MyAppBar() {
                     flexItem
                   />
 
-                  <Grid item>
+                  <Grid
+                    item
+                    onMouseOver={hoverGitHub}
+                    className={classes.gridItem}
+                  >
                     <AppBarButton
-                      text={<Text className={classes.text}>GitHub</Text>}
-                      icon={<GitHubIcon className={classes.icon} />}
+                      text={
+                        <Text
+                          className={
+                            gitHubHover ? classes.textHover : classes.text
+                          }
+                        >
+                          GitHub
+                        </Text>
+                      }
+                      icon={
+                        <GitHubIcon
+                          className={
+                            gitHubHover ? classes.iconHover : classes.icon
+                          }
+                        />
+                      }
+                      url={"https://github.com/louishinohara"}
                     />
                   </Grid>
                   <Divider
@@ -105,10 +159,29 @@ export default function MyAppBar() {
                     orientation="vertical"
                     flexItem
                   />
-                  <Grid item>
+                  <Grid
+                    item
+                    onMouseOver={hoverResume}
+                    className={classes.gridItem}
+                  >
                     <AppBarButton
-                      text={<Text className={classes.text}>Resume</Text>}
-                      icon={<DescriptionIcon className={classes.icon} />}
+                      text={
+                        <Text
+                          className={
+                            resumeHover ? classes.textHover : classes.text
+                          }
+                        >
+                          Resume
+                        </Text>
+                      }
+                      icon={
+                        <DescriptionIcon
+                          className={
+                            resumeHover ? classes.iconHover : classes.icon
+                          }
+                        />
+                      }
+                      url={Resume}
                     />
                   </Grid>
                 </Grid>
@@ -133,14 +206,6 @@ const appBarStyles = makeStyles((theme) =>
         duration: theme.transitions.duration.leavingScreen,
       }),
     },
-    appBarShift: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-      transition: theme.transitions.create(["margin", "width"], {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-    },
     title: {
       color: theme.palette.appBar.title,
       fontSize: 28,
@@ -155,186 +220,40 @@ const appBarStyles = makeStyles((theme) =>
         color: theme.palette.appBar.hamburgerMenu,
       },
     },
-    menuTextContainer:{
-      marginLeft: 8,
-      marginRight: 8
+    menuTextContainer: {
+      marginLeft: 4,
+      marginRight: 20,
     },
     text: {
       color: theme.palette.appBar.title,
       fontSize: 16,
       letterSpacing: "6px",
-      "&:hover": {
-        color: theme.palette.appBar.hamburgerMenu,
-      },
+    },
+    textHover: {
+      color: theme.palette.appBar.hamburgerMenu,
+      fontSize: 16,
+      letterSpacing: "6px",
     },
     icon: {
       color: theme.palette.appBar.buttonColor,
       fontSize: 28,
-      "&:hover": {
-        color: theme.palette.appBar.hamburgerMenu,
-      },
+    },
+    iconHover: {
+      color: theme.palette.appBar.hamburgerMenu,
+      fontSize: 28,
     },
     divider: {
       fontWeight: "600",
       backgroundColor: theme.palette.appBar.divider,
-      marginRight: 10,
-      marginLeft: 10,
+      // marginRight: 10,
+      // marginLeft: 10,
     },
     menuButton: {
       color: theme.palette.appBar.hamburgerMenu,
       fontSize: 30,
     },
+    gridItem: {
+      padding: 10,
+    },
   })
 );
-
-// import React from "react";
-// import { makeStyles } from "@material-ui/core/styles";
-// import {
-//   AppBar,
-//   Toolbar,
-//   IconButton,
-//   Typography as Text,
-//   Grid,
-//   createStyles,
-//   Divider,
-// } from "@material-ui/core";
-// import { drawerWidth, isMobile } from "../constants/constants";
-// import CustomDrawer from "./Drawer";
-
-// import clsx from "clsx";
-// import MenuIcon from "@material-ui/icons/Menu";
-
-// import AppBarButton from "./reusable/appBarButton";
-// import GitHubIcon from "@material-ui/icons/GitHub";
-// import LinkedInIcon from "@material-ui/icons/LinkedIn";
-// import DescriptionIcon from "@material-ui/icons/Description";
-
-// export default function MyAppBar() {
-//   const classes = appBarStyles();
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleDrawer = () => {
-//     setOpen(!open);
-//   };
-
-//   return (
-//     <div className={classes.grow}>
-//       <AppBar
-//         position="static"
-//         className={clsx(classes.appBar, {
-//           [classes.appBarShift]: open,
-//         })}
-//       >
-//         <Toolbar>
-//           <IconButton
-//             edge="start"
-//             color="inherit"
-//             aria-label="open drawer"
-//             onClick={() => handleDrawer()}
-//           >
-//             <MenuIcon className={classes.menuButton} />
-//           </IconButton>
-
-//           <Grid container alignItems="center" justify="space-between">
-//             <Grid item>
-//               <Text className={classes.title} variant="h6" noWrap>
-//                 Louis Shinohara
-//               </Text>
-//             </Grid>
-//             {/* START FOR THE TEXT BUTTONS ON THE RIGHT SIDE OF MENU */}
-
-//             {isMobile ? null : (
-//               <Grid item>
-//                 <Grid container>
-//                   <Grid item>
-//                     <AppBarButton
-//                       text={<Text className={classes.text}>LinkedIn</Text>}
-//                       icon={<LinkedInIcon className={classes.icon} />}
-//                     />
-//                   </Grid>
-//                   <Divider
-//                     className={classes.divider}
-//                     orientation="vertical"
-//                     flexItem
-//                   />
-
-//                   <Grid item>
-//                     <AppBarButton
-//                       text={<Text className={classes.text}>GitHub</Text>}
-//                       icon={<GitHubIcon className={classes.icon} />}
-//                     />
-//                   </Grid>
-//                   <Divider
-//                     className={classes.divider}
-//                     orientation="vertical"
-//                     flexItem
-//                   />
-//                   <Grid item>
-//                     <AppBarButton
-//                       text={<Text className={classes.text}>Resume</Text>}
-//                       icon={<DescriptionIcon className={classes.icon} />}
-//                     />
-//                   </Grid>
-//                 </Grid>
-//               </Grid>
-//             )}
-//             {/* END FOR THE TEXT BUTTONS ON THE RIGHT SIDE OF MENU */}
-//           </Grid>
-//         </Toolbar>
-//       </AppBar>
-
-//       <CustomDrawer open={open} handleDrawer={handleDrawer} />
-//     </div>
-//   );
-// }
-
-// const appBarStyles = makeStyles((theme) =>
-//   createStyles({
-//     appBar: {
-//       backgroundColor: theme.palette.appBar.appBarColor,
-//       transition: theme.transitions.create(["margin", "width"], {
-//         easing: theme.transitions.easing.sharp,
-//         duration: theme.transitions.duration.leavingScreen,
-//       }),
-//     },
-//     appBarShift: {
-//       width: `calc(100% - ${drawerWidth}px)`,
-//       marginLeft: drawerWidth,
-//       transition: theme.transitions.create(["margin", "width"], {
-//         easing: theme.transitions.easing.easeOut,
-//         duration: theme.transitions.duration.enteringScreen,
-//       }),
-//     },
-//     title: {
-//       color: theme.palette.appBar.title,
-//       fontSize: 28,
-//       fontWeight: "500",
-//       letterSpacing: "3px",
-//     },
-//     text: {
-//       color: theme.palette.appBar.title,
-//       fontSize: 16,
-//       letterSpacing: "6px",
-//       "&:hover": {
-//         color: theme.palette.appBar.hamburgerMenu,
-//       },
-//     },
-//     icon: {
-//       color: theme.palette.appBar.buttonColor,
-//       fontSize: 28,
-//       "&:hover": {
-//         color: theme.palette.appBar.hamburgerMenu,
-//       },
-//     },
-//     divider: {
-//       fontWeight: "600",
-//       backgroundColor: theme.palette.appBar.divider,
-//       marginRight: 10,
-//       marginLeft: 10,
-//     },
-//     menuButton: {
-//       color: theme.palette.appBar.hamburgerMenu,
-//       fontSize: 30,
-//     },
-//   })
-// );

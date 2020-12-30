@@ -12,14 +12,20 @@ import {
 
 import { makeStyles, createStyles } from "@material-ui/styles";
 
-function AppBarButton({ text, icon }) {
+function AppBarButton({ text, icon, url }) {
   const classes = appBarButtonStyles();
   return (
-    <Grid container className={classes.body} alignItems="center" justify="center" >
-      <Grid item>
-        {text}
+    <Grid
+      container
+      className={classes.body}
+      alignItems="center"
+      justify="center"
+      onClick={() => window.open(url)}
+    >
+      <Grid item>{text}</Grid>
+      <Grid item className={classes.icon}>
+        {icon}
       </Grid>
-      <Grid item className={classes.icon} >{icon}</Grid>
     </Grid>
   );
 }
@@ -31,10 +37,11 @@ const appBarButtonStyles = makeStyles((theme) =>
     body: {
       marginLeft: 12,
       marginRight: 12,
+      cursor:'pointer'
     },
     icon: {
-        marginLeft: 4,
-        marginRight: 4,
-    }
+      marginLeft: 4,
+      marginRight: 4,
+    },
   })
 );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import {
   AppBar,
   Toolbar,
@@ -9,19 +9,70 @@ import {
   Badge,
   Grid,
   Button,
+  useScrollTrigger,
+  Slide,
+  CssBaseline,
 } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
 
-import LandingPage from './LandingPage';
-import MyAppBar from "./AppBar";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function AppBody() {
-    const classes = appBodyStyles();
+import LandingPage from "./pages/LandingPage";
+import MyAppBar from "./AppBar";
+import AboutPage from "./pages/About";
+import ProjectsPage from "./pages/Projects";
+import SkillsPage from "./pages/Skills";
+import ExperiencePage from "./pages/Experience";
+import ContactPage from "./pages/Contact";
+// https://material-ui.com/components/app-bar/#hide-app-bar
+// function HideOnScroll(props) {
+//   const { children, window } = props;
+//   // Note that you normally won't need to set the window ref as useScrollTrigger
+//   // will default to window.
+//   // This is only being set here because the demo is in an iframe.
+//   const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+//   return (
+//     <Slide appear={false} direction="down" in={!trigger}>
+//       {children}
+//     </Slide>
+//   );
+// }
+
+// HideOnScroll.propTypes = {
+//   children: PropTypes.element.isRequired,
+//   /**
+//    * Injected by the documentation to work in an iframe.
+//    * You won't need it on your project.
+//    */
+//   window: PropTypes.func,
+// };
+
+function AppBody(props) {
+  const classes = appBodyStyles();
   return (
     <div className={classes.appBody}>
-    <LandingPage className={classes.landingPage} />
-    <MyAppBar /> 
-    <Text style={{marginTop: 999}}>aaa</Text>
+      {/* <Switch>
+        <Route exact path="/home" component={LandingPage} />
+        <Route   path="/about" component={AboutPage} />
+        <Route   path="/projects" component={ProjectsPage} />
+        <Route   path="/skills" component={SkillsPage} />
+        <Route   path="/experience" component={ExperiencePage} />
+        <Route   path="/contact" component={ContactPage} />
+      </Switch> */}
+      <LandingPage />
+      <CssBaseline/>
+      <MyAppBar />
+      <AboutPage/>
+      <ProjectsPage />
+      <SkillsPage />
+      <ExperiencePage />
+      <ContactPage/>
+      {/* <MyAppBar />
+      <Text style={{ marginTop: 999 }}>aaa</Text> */}
+
+      {/* <HideOnScroll {...props}> */}
+      {/* </HideOnScroll> */}
     </div>
   );
 }
@@ -35,4 +86,3 @@ const appBodyStyles = makeStyles((theme) =>
     },
   })
 );
-
