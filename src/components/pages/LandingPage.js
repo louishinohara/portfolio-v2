@@ -17,6 +17,8 @@ import { MDBAnimation } from "mdbreact";
 import { Link } from "../../constants/constants";
 import { useHistory } from "react-router-dom";
 
+import {isMobile} from '../../constants/constants';
+
 const name = "Ushio Louis Shinohara";
 
 // Jump over camera
@@ -125,19 +127,19 @@ const landingPageStyles = makeStyles((theme) =>
     },
     mainText: {
       color: "white",
-      fontSize: "2.85vw",
+      fontSize: "3.85vh",
       fontWeight: "500",
     },
     name: {
       color: theme.palette.landingPage.nameColor,
-      fontSize: "3.8vw",
+      fontSize: isMobile ? "1.5vh" : "5.8vh",
       fontWeight: "500",
       marginLeft: 3,
       letterSpacing: "8px",
     },
     typicalText: {
       color: theme.palette.landingPage.descriptionColor,
-      fontSize: "2.3vw",
+      fontSize: isMobile ? "1.3vh" : "3.3vh",
       fontWeight: "500",
       letterSpacing: "3px",
       paddingTop: '0px !important'

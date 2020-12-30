@@ -51,7 +51,7 @@ const aboutPageStyles = makeStyles((theme) =>
       // maxHeight: "100%",
       // width: "100%",
       height: "600px",
-      width: "400px",
+      width: "300px",
       objectFit: 'contain',
  
     },
