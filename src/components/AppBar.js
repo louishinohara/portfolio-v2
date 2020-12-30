@@ -110,24 +110,22 @@ export default function MyAppBar() {
                             linkedInHover ? classes.textHover : classes.text
                           }
                         >
-                          LinkedIn
+                          Linked 
                         </Text>
                       }
                       icon={
                         <LinkedInIcon
                           className={
                             linkedInHover ? classes.iconHover : classes.icon
+
                           }
+                          style={{marginTop:2}}
                         />
                       }
                       url={"https://www.linkedin.com/in/louishinohara/"}
                     />
                   </Grid>
-                  <Divider
-                    className={classes.divider}
-                    orientation="vertical"
-                    flexItem
-                  />
+ 
 
                   <Grid
                     item
@@ -136,13 +134,23 @@ export default function MyAppBar() {
                   >
                     <AppBarButton
                       text={
-                        <Text
-                          className={
-                            gitHubHover ? classes.textHover : classes.text
-                          }
-                        >
-                          GitHub
-                        </Text>
+                        <Grid container>
+                          <Grid item>
+                            <Text className={classes.divider}>|</Text>
+                          </Grid>
+                          <Grid item>
+                            <Text
+                              className={
+                                gitHubHover ? classes.textHover : classes.text
+
+                              }
+                            >
+                              GitHub
+                            </Text>
+                          </Grid>
+                        </Grid>
+
+ 
                       }
                       icon={
                         <GitHubIcon
@@ -154,11 +162,7 @@ export default function MyAppBar() {
                       url={"https://github.com/louishinohara"}
                     />
                   </Grid>
-                  <Divider
-                    className={classes.divider}
-                    orientation="vertical"
-                    flexItem
-                  />
+
                   <Grid
                     item
                     onMouseOver={hoverResume}
@@ -166,13 +170,20 @@ export default function MyAppBar() {
                   >
                     <AppBarButton
                       text={
-                        <Text
-                          className={
-                            resumeHover ? classes.textHover : classes.text
-                          }
-                        >
-                          Resume
-                        </Text>
+                        <Grid container>
+                          <Grid item>
+                            <Text className={classes.divider}>|</Text>
+                          </Grid>
+                          <Grid item>
+                            <Text
+                              className={
+                                resumeHover ? classes.textHover : classes.text
+                              }
+                            >
+                              Resume
+                            </Text>
+                          </Grid>
+                        </Grid>
                       }
                       icon={
                         <DescriptionIcon
@@ -243,9 +254,9 @@ const appBarStyles = makeStyles((theme) =>
       fontSize: 28,
     },
     divider: {
-      fontWeight: "600",
-      backgroundColor: theme.palette.appBar.divider,
-      // marginRight: 10,
+      fontSize: 16,
+      color: theme.palette.appBar.title,
+      marginRight: 20,
       // marginLeft: 10,
     },
     menuButton: {
@@ -253,7 +264,7 @@ const appBarStyles = makeStyles((theme) =>
       fontSize: 30,
     },
     gridItem: {
-      padding: 10,
+      // padding: 10,
     },
   })
 );

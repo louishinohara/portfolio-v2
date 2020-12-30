@@ -35,12 +35,12 @@ export default AppBarButton;
 const appBarButtonStyles = makeStyles((theme) =>
   createStyles({
     body: {
-      marginLeft: 12,
-      marginRight: 12,
+      marginLeft: 6,
+      marginRight: 6,
       cursor:'pointer'
     },
     icon: {
-      marginLeft: 4,
+      // marginLeft: 4,
       marginRight: 4,
     },
   })

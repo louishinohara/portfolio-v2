@@ -9,7 +9,7 @@ function AboutPage() {
   return (
     <div className={classes.body} id="about">
       <Grid container justify="center" alignItems="center">
-        <Grid item>
+        <Grid item className={classes.mediaContainer}>
           <Card>
             <CardMedia className={classes.media} image={me}></CardMedia>
           </Card>
@@ -44,12 +44,16 @@ const aboutPageStyles = makeStyles((theme) =>
       fontSize: 50,
       color: "#f7f8f9",
     },
+    mediaContainer:{
+      marginTop: 50
+    },
     media: {
       // maxHeight: "100%",
       // width: "100%",
-      height: "200px",
+      height: "600px",
       width: "400px",
-      objectFit: 'contain'
+      objectFit: 'contain',
+ 
     },
     nameBody:{
       marginLeft: 16

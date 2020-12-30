@@ -1,21 +1,49 @@
 import React from "react";
 import { IconButton, Typography as Text, Grid } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
+import Typical from "react-typical";
+import {
+  nameDelay,
+  nameTransitionDuration,
+  descriptionDelay,
+  decriptionTransitionDuration,
+  descriptionTextDelayArray,
+} from "../../constants/constants";
+import FadeIn from "react-fade-in";
 import myImg from "../../assets/img/test1.jpg";
 
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-
+import { MDBAnimation } from "mdbreact";
 import { Link } from "../../constants/constants";
+import { useHistory } from "react-router-dom";
 
-const name = "Louis Shinohara";
-const R = "R  ";
-const U = "U";
-const description2 = "student and aspiring ";
-const SWE = " Software Engineer";
-const period = "";
+const name = "Ushio Louis Shinohara";
+
+// Jump over camera
+// Website text starts to show
+// Louis Shinohara
+// Make the text underneath my name cycle from
+// BMX -> RU Student -> Aspiring Software Engineer
+// Clip of Me Biking -> Clip of me at school -> Clip of me coding
+// At the end of the click, transition to the about page
 
 function LandingPage() {
   const classes = landingPageStyles();
+  const history = useHistory();
+
+  // React.useEffect(() => {
+
+
+  //   let totalTime =
+  //     nameDelay +
+  //     descriptionDelay +
+  //     descriptionTextDelayArray.reduce((a, b) => a + b, 0) +
+  //     3000;
+  //   setTimeout(() => {
+  //   history.push('/appBar')
+      
+  //   }, 2000);
+  // }, []);
   return (
     <Grid
       container
@@ -29,51 +57,56 @@ function LandingPage() {
       <Grid item>
         <Text></Text>
       </Grid>
+      {/* Name Section */}
       <Grid item>
         <Grid item>
-          <Grid container alignItems="center" justify="center">
-            <Grid item>
-              <Text className={classes.name}>{name} </Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.period}>{period}</Text>
-            </Grid>
-          </Grid>
+          <FadeIn delay={nameDelay} transitionDuration={nameTransitionDuration}>
+            <Text className={classes.name}>{name} </Text>
+          </FadeIn>
         </Grid>
-
+        {/* Description Section */}
         <Grid item>
-          <Grid container alignItems="center" justify="center">
-            <Grid item>
-              <Text className={classes.R}>{R} </Text>
+          <FadeIn
+            delay={descriptionDelay}
+            transitionDuration={decriptionTransitionDuration}
+          >
+            <Grid container alignItems="center" justify="center">
+              <Grid item>
+                <Typical
+                  className={classes.typicalText}
+                  steps={[
+                    " ",
+                    descriptionTextDelayArray[0],
+                    "BMX Enthusiast",
+                    descriptionTextDelayArray[1],
+                    "Rutgers Student",
+                    descriptionTextDelayArray[2],
+                    "Aspiring Software Engineer",
+                    descriptionTextDelayArray[3],
+                    "Welcome To My Site",
+                    descriptionTextDelayArray[4],
+                  ]}
+                  loop={1}
+                  wrap={"span"}
+                />
+              </Grid>
             </Grid>
-            <Grid item>
-              <Text className={classes.U}>{U} </Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.mainText}> </Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.mainText}>{description2}</Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.mainText}> </Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.SWE}>{SWE}</Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.period}>{period}</Text>
-            </Grid>
-          </Grid>
+          </FadeIn>
         </Grid>
       </Grid>
 
       <Grid item className={classes.iconButton}>
+      <FadeIn delay={descriptionDelay + 2000} transitionDuration={decriptionTransitionDuration + 2000}>
         <IconButton>
           <Link smooth to="#appBar">
+      <MDBAnimation type="bounce" infinite={true}>
+
             <KeyboardArrowDownIcon className={classes.downIcon} />
+            </MDBAnimation>
+
           </Link>
         </IconButton>
+         </FadeIn>
       </Grid>
     </Grid>
   );
@@ -83,10 +116,6 @@ export default LandingPage;
 
 const landingPageStyles = makeStyles((theme) =>
   createStyles({
-    img: {
-      height: 160,
-      width: 180,
-    },
     body: {
       height: "100vh",
       backgroundColor: "rgba(0,0,0,0.83)",
@@ -98,39 +127,20 @@ const landingPageStyles = makeStyles((theme) =>
       color: "white",
       fontSize: "2.85vw",
       fontWeight: "500",
-      marginLeft: 3,
-      marginRight: 3,
     },
     name: {
       color: theme.palette.landingPage.nameColor,
-      fontSize: "3.5vw",
-      fontWeight: "600",
-      marginLeft: 3,
-    },
-    R: {
-      color: "#cc0033",
-      fontSize: "3.5vw",
-      fontWeight: "600",
-      marginLeft: 2,
-      marginRight: 2,
-    },
-    U: {
-      color: "#cc0033",
-      fontSize: "3.5vw",
-      fontWeight: "600",
-      marginLeft: 2,
-      marginRight: 2,
-    },
-    SWE: {
-      color: "green",
-      fontSize: "3.5vw",
-      fontWeight: "600",
-      marginLeft: 2,
-    },
-    period: {
-      color: "white",
-      fontSize: "2.85vw",
+      fontSize: "3.8vw",
       fontWeight: "500",
+      marginLeft: 3,
+      letterSpacing: "8px",
+    },
+    typicalText: {
+      color: theme.palette.landingPage.descriptionColor,
+      fontSize: "2.3vw",
+      fontWeight: "500",
+      letterSpacing: "3px",
+      paddingTop: '0px !important'
     },
     iconButton: {
       paddingBottom: 16,

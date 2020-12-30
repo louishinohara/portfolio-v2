@@ -10,7 +10,7 @@ import { lightTheme, darkTheme } from './theme/themeColors';
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-
+import {GlobalStyles  } from './AppStyles';
 const isDark = true;
 function App() {
   const store = createStore(
@@ -21,6 +21,7 @@ function App() {
   return (
     <React.StrictMode>
       <Provider store={store}>
+        <GlobalStyles />
         <ThemeProvider theme={createMuiTheme(isDark ? darkTheme : lightTheme)}>
           <AppBody />
         </ThemeProvider>
