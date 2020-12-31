@@ -1,10 +1,7 @@
 import React from "react";
-import {
-    Typography as Text,
-    Grid,
-  } from "@material-ui/core";
-  import { makeStyles, createStyles } from "@material-ui/styles";
-  
+import { Typography as Text, Grid, Button } from "@material-ui/core";
+import { makeStyles, createStyles } from "@material-ui/styles";
+
 function ProjectsPage() {
   const classes = projectsPageStyles();
   return (
@@ -28,7 +25,7 @@ const projectsPageStyles = makeStyles((theme) =>
     test: {
       backgroundColor: theme.palette.base.backgroundColor,
       fontSize: 50,
-      color: '#f7f8f9'
+      color: "#f7f8f9",
     },
   })
 );

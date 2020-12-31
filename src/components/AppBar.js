@@ -62,12 +62,12 @@ export default function MyAppBar() {
                     activeClassName="selected"
                     activeStyle={{ color: "red" }}
                   >
-                    <Text className={classes.menuText}>Home</Text>
+                    <Text  className={classes.menuText}>Home</Text>
                   </Link>
                 </Grid>
                 <Grid item className={classes.menuTextContainer}>
                   <Link to="#about" smooth>
-                    <Text className={classes.menuText}>About</Text>
+                    <Text style={{color:'#cc0033'}} className={classes.menuText}>About</Text>
                   </Link>
                 </Grid>
                 <Grid item className={classes.menuTextContainer}>
@@ -228,7 +228,7 @@ const appBarStyles = makeStyles((theme) =>
       fontSize: 20,
       letterSpacing: "3px",
       "&:hover": {
-        color: theme.palette.appBar.hamburgerMenu,
+        color: theme.palette.base.themeColor,
       },
     },
     menuTextContainer: {
@@ -241,7 +241,7 @@ const appBarStyles = makeStyles((theme) =>
       letterSpacing: "6px",
     },
     textHover: {
-      color: theme.palette.appBar.hamburgerMenu,
+      color: theme.palette.base.themeColor,
       fontSize: 16,
       letterSpacing: "6px",
     },
@@ -250,7 +250,7 @@ const appBarStyles = makeStyles((theme) =>
       fontSize: 28,
     },
     iconHover: {
-      color: theme.palette.appBar.hamburgerMenu,
+      color: theme.palette.base.themeColor,
       fontSize: 28,
     },
     divider: {
@@ -260,7 +260,7 @@ const appBarStyles = makeStyles((theme) =>
       // marginLeft: 10,
     },
     menuButton: {
-      color: theme.palette.appBar.hamburgerMenu,
+      color: theme.palette.base.themeColor,
       fontSize: 30,
     },
     gridItem: {

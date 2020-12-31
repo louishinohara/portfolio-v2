@@ -17,7 +17,7 @@ import { MDBAnimation } from "mdbreact";
 import { Link } from "../../constants/constants";
 import { useHistory } from "react-router-dom";
 
-import {isMobile} from '../../constants/constants';
+import { isMobile } from "../../constants/constants";
 
 const name = "Ushio Louis Shinohara";
 
@@ -35,7 +35,6 @@ function LandingPage() {
 
   // React.useEffect(() => {
 
-
   //   let totalTime =
   //     nameDelay +
   //     descriptionDelay +
@@ -43,7 +42,7 @@ function LandingPage() {
   //     3000;
   //   setTimeout(() => {
   //   history.push('/appBar')
-      
+
   //   }, 2000);
   // }, []);
   return (
@@ -98,17 +97,18 @@ function LandingPage() {
       </Grid>
 
       <Grid item className={classes.iconButton}>
-      <FadeIn delay={descriptionDelay + 2000} transitionDuration={decriptionTransitionDuration + 2000}>
-        <IconButton>
-          <Link smooth to="#appBar">
-      <MDBAnimation type="bounce" infinite={true}>
-
-            <KeyboardArrowDownIcon className={classes.downIcon} />
-            </MDBAnimation>
-
-          </Link>
-        </IconButton>
-         </FadeIn>
+        <FadeIn
+          delay={descriptionDelay + 2000}
+          transitionDuration={decriptionTransitionDuration + 2000}
+        >
+          <IconButton>
+            <Link smooth to="#appBar">
+              <MDBAnimation type="bounce" infinite={true}>
+                <KeyboardArrowDownIcon className={classes.downIcon} />
+              </MDBAnimation>
+            </Link>
+          </IconButton>
+        </FadeIn>
       </Grid>
     </Grid>
   );
@@ -142,7 +142,7 @@ const landingPageStyles = makeStyles((theme) =>
       fontSize: isMobile ? "1.3vh" : "3.3vh",
       fontWeight: "500",
       letterSpacing: "3px",
-      paddingTop: '0px !important'
+      paddingTop: "0px !important",
     },
     iconButton: {
       paddingBottom: 16,
