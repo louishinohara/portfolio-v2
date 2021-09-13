@@ -1,0 +1,58 @@
+{
+    "data" : [
+        {
+            "jobName": "Kids International Weekend School of NJ",
+            "jobTitle": "Assistant Teacher",
+            "jobDates": "June 2014 - September 2016",
+            "jobDescr": "",
+            "img": "./assets/img/work/kids.jpg"
+        },
+        {
+            "jobName": "Dellridge Health and Rehabilitation Center",
+            "jobTitle": "Dietary Aide",
+            "jobDates": "September 2015 - August 2018",
+            "jobDescr": "",
+            "img": "./assets/img/work/dellridge.jpeg"
+
+        },
+        {
+            "jobName": "Office of Information Technology at Rutgers University",
+            "jobTitle": "IT Consultant",
+            "jobDates": "May 2019 - September 2020",
+            "jobDescr": "",
+            "img": "./assets/img/work/oit.jpg"
+
+        },
+        {
+            "jobName": "Enterprise Application Services at Rutgers University",
+            "jobTitle": "Web/Mobile App Developer",
+            "jobDates": "December 2020 - Present",
+            "jobDescr": "",
+            "img": "./assets/img/work/EAS.png"
+
+        },
+        {
+            "jobName": "Knowt",
+            "jobTitle": "Mobile App Developer",
+            "jobDates": "January 2020 - March 2021",
+            "jobDescr": "",
+            "img": "./assets/img/work/knowt.png"
+
+        },
+        {
+            "jobName": "United Health Group",
+            "jobTitle": "Full Stack Software Engineer",
+            "jobDates": "Summer 2020",
+            "jobDescr": "",
+            "img": "./assets/img/work/UHG.jpg"
+
+        },
+        {
+            "jobName": "AT&T",
+            "jobTitle": "Sofware Engineer",
+            "jobDates": "July 2021 - Present",
+            "jobDescr": "",
+            "img": "./assets/img/work/att.jpg"
+        }
+    ]
+}

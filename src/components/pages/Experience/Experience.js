@@ -11,32 +11,31 @@ import {
 
 import ExperienceComponent from "./experienceComponents";
 
+import kids from "../../../assets/img/work/kids.jpg"
+
 function ExperiencePage() {
   const classes = experiencePageStyles();
+  const experience = require('./experience.json')
   return (
     <div className={classes.body} id="experience">
       <Text style={{color:'#ffffff'}}>Work Experience</Text>
       <Grid container direction="column" alignItems="center" justify="center">
         {
-          jobName.forEach((job, index) => {
-            console.log(jobName[index])
-            return (
-              <Grid item>
-              {/* <ExperienceComponent
-                name={jobName[index]}
-                title={jobTitle[index]}
-                date={jobDates[index]}
-                descr={""}
+        experience.data.map((job, index) => 
+            <Grid item>
+              <ExperienceComponent
+                name={job.jobName}
+                title={job.jobTitle}
+                date={job.jobDates}
+                descr={job.jobDescr}
                 left={index % 2 == 0}
-                img={jobImg[index]}
-              /> */}
-              <h1>{jobName[index]}</h1>
+                img={job.img}
+              />
             </Grid>
-            )
-          })
+          )
         }
 
-        <Grid item>
+        {/* <Grid item>
           <ExperienceComponent
             name={jobName[1]}
             title={jobTitle[1]}
@@ -45,8 +44,8 @@ function ExperiencePage() {
             left={false}
             img={jobImg[1]}
           />
-        </Grid>
-        <Grid item>
+        </Grid> */}
+        {/* <Grid item>
           <ExperienceComponent
             name={jobName[2]}
             title={jobTitle[2]}
@@ -95,7 +94,7 @@ function ExperiencePage() {
             left={true}
             img={jobImg[6]}
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );
