@@ -7,9 +7,9 @@ import {
   jobTitle,
   jobDates,
   jobDescr,
-} from "../../constants/constants";
+} from "../../../constants/constants";
 
-import ExperienceComponent from "../reusable/experienceComponents";
+import ExperienceComponent from "./experienceComponents";
 
 function ExperiencePage() {
   const classes = experiencePageStyles();
@@ -17,19 +17,25 @@ function ExperiencePage() {
     <div className={classes.body} id="experience">
       <Text style={{color:'#ffffff'}}>Work Experience</Text>
       <Grid container direction="column" alignItems="center" justify="center">
-        <Grid item>
-          <ExperienceComponent
-            name={jobName[0]}
-            title={jobTitle[0]}
-            date={jobDates[0]}
-            descr={""}
-            left={true}
-            img={jobImg[0]}
-          />
-        </Grid>
-        <Grid item>
-        <Divider></Divider>
-        </Grid>
+        {
+          jobName.forEach((job, index) => {
+            console.log(jobName[index])
+            return (
+              <Grid item>
+              {/* <ExperienceComponent
+                name={jobName[index]}
+                title={jobTitle[index]}
+                date={jobDates[index]}
+                descr={""}
+                left={index % 2 == 0}
+                img={jobImg[index]}
+              /> */}
+              <h1>{jobName[index]}</h1>
+            </Grid>
+            )
+          })
+        }
+
         <Grid item>
           <ExperienceComponent
             name={jobName[1]}
@@ -110,7 +116,6 @@ const experiencePageStyles = makeStyles((theme) =>
     line: {
       width: '112px',
       height: '47px',
-      // borderBottom: '1px solid black',
       position: 'absolute',
       color: '#cc0033'
       }

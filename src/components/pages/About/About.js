@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
 
-import me from "../../assets/img/meBW.jpg";
+import me from "../../../assets/img/meBW.jpg";
 
 function AboutPage() {
   const classes = aboutPageStyles();

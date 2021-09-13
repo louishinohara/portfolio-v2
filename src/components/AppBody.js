@@ -17,13 +17,13 @@ import { makeStyles, createStyles } from "@material-ui/styles";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./pages/LandingPage/LandingPage"
 import MyAppBar from "./AppBar";
-import AboutPage from "./pages/About";
-import ProjectsPage from "./pages/Projects";
-import SkillsPage from "./pages/Skills";
-import ExperiencePage from "./pages/Experience";
-import ContactPage from "./pages/Contact";
+import AboutPage from "./pages/About/About";
+import ProjectsPage from "./pages/Projects/Projects";
+import SkillsPage from "./pages/Skills/Skills";
+import ExperiencePage from "./pages/Experience/Experience";
+import ContactPage from "./pages/Contact/Contact";
 // https://material-ui.com/components/app-bar/#hide-app-bar
 // function HideOnScroll(props) {
 //   const { children, window } = props;

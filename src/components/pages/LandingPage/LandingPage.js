@@ -1,23 +1,22 @@
 import React from "react";
 import { IconButton, Typography as Text, Grid } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import Typical from "react-typical";
+import { MDBAnimation } from "mdbreact";
+import FadeIn from "react-fade-in";
+
 import {
   nameDelay,
   nameTransitionDuration,
   descriptionDelay,
   decriptionTransitionDuration,
   descriptionTextDelayArray,
-} from "../../constants/constants";
-import FadeIn from "react-fade-in";
-import myImg from "../../assets/img/test1.jpg";
-
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import { MDBAnimation } from "mdbreact";
-import { Link } from "../../constants/constants";
+  Link, isMobile
+} from "../../../constants/constants";
 import { useHistory } from "react-router-dom";
 
-import { isMobile } from "../../constants/constants";
+import myImg from "../../../assets/img/test1.jpg";
 
 const name = "Ushio Louis Shinohara";
 
