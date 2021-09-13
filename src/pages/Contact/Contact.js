@@ -6,7 +6,7 @@ import {
   } from "@material-ui/core";
   import { makeStyles, createStyles } from "@material-ui/styles";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import {Link} from '../../../constants/constants';
+import {Link} from '../../constants/constants';
 
 function ContactPage() {
   const classes = contactPageStyles();

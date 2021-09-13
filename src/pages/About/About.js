@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/styles";
 
-import me from "../../../assets/img/meBW.jpg";
 
 function AboutPage() {
   const classes = aboutPageStyles();
@@ -23,7 +22,7 @@ function AboutPage() {
     >
       <Grid item>
       <Card className={classes.root}>
-        <CardMedia className={classes.media} image={me}></CardMedia>
+        <CardMedia className={classes.media} image={""}></CardMedia>
 
         <CardContent className={classes.content}>
           <Grid

@@ -13,8 +13,6 @@ import { drawerWidth, isMobile } from "../constants/constants";
 import CustomDrawer from "./Drawer";
 import { Link } from "../constants/constants";
 
-import Resume from "../assets/resume/Resume.pdf";
-
 import AppBarButton from "./reusable/appBarButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -192,7 +190,7 @@ export default function MyAppBar() {
                           }
                         />
                       }
-                      url={Resume}
+                      // url={require("./public/assets/resume/Resume.pdf")}
                     />
                   </Grid>
                 </Grid>

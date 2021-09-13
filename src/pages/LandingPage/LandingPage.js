@@ -13,10 +13,10 @@ import {
   decriptionTransitionDuration,
   descriptionTextDelayArray,
   Link, isMobile
-} from "../../../constants/constants";
+} from "../../constants/constants";
 import { useHistory } from "react-router-dom";
 
-import myImg from "../../../assets/img/test1.jpg";
+// import myImg from "./assets/img/test1.jpg"
 
 const name = "Ushio Louis Shinohara";
 
@@ -120,7 +120,7 @@ const landingPageStyles = makeStyles((theme) =>
     body: {
       height: "100vh",
       backgroundColor: "rgba(0,0,0,0.83)",
-      backgroundImage: `url(${myImg})`,
+      // backgroundImage: `url(${require(myImg)})`,
       backgroundSize: "cover",
       backgroundBlendMode: "overlay",
     },

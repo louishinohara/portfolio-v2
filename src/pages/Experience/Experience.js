@@ -7,11 +7,9 @@ import {
   jobTitle,
   jobDates,
   jobDescr,
-} from "../../../constants/constants";
+} from "../../constants/constants";
 
 import ExperienceComponent from "./experienceComponents";
-
-import kids from "../../../assets/img/work/kids.jpg"
 
 function ExperiencePage() {
   const classes = experiencePageStyles();
