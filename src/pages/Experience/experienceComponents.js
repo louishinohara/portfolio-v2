@@ -15,6 +15,28 @@ import { makeStyles, createStyles } from "@material-ui/styles";
 
 function ExperienceComponent({ name, title, img, date, descr, left }) {
   const classes = experienceComponentStyles();
+  const renderText = () => {
+    return(
+      <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems={left ? "flex-end" : "flex-start"}
+    >
+      <Grid item>
+        <Text className={classes.jobName}>{name}</Text>
+      </Grid>
+
+      <Grid item>
+        <Text className={classes.jobTitle}>{title}</Text>
+      </Grid>            
+      
+      <Grid item>
+        <Text className={classes.jobDate} >{date}</Text>
+      </Grid>
+    </Grid>
+    )
+  }
   return (
     <Grid
       container
@@ -24,50 +46,18 @@ function ExperienceComponent({ name, title, img, date, descr, left }) {
     >
       <Grid item className={classes.textBodyLeft}>
         {left && (
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="flex-end"
-          >
-            <Grid item>
-              <Text className={classes.jobName}>{name}</Text>
-            </Grid>
-
-            <Grid item>
-              <Text className={classes.jobTitle}>{title}</Text>
-            </Grid>            
-            
-            <Grid item>
-              <Text className={classes.jobDate} >{date}</Text>
-            </Grid>
-          </Grid>
+          renderText()
         )}
       </Grid>
       <Grid item>
-        <Avatar src={img} className={classes.avatar} />
-
- 
+        <Avatar 
+          className={classes.avatar}
+          src={img}   
+         />
       </Grid>
       <Grid item className={classes.textBodyRight}>
         {!left && (
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="flex-start"
-          >
-            <Grid item>
-              <Text className={classes.jobName}>{name}</Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.jobTitle}>{title}</Text>
-            </Grid>
-            <Grid item>
-              <Text className={classes.jobDate} >{date}</Text>
-            </Grid>
-
-          </Grid>
+          renderText()
         )}
       </Grid>
     </Grid>
@@ -79,32 +69,33 @@ export default ExperienceComponent;
 const experienceComponentStyles = makeStyles((theme) =>
   createStyles({
     body: {
-      marginTop: 50,
-      marginBottom: 50,
+      marginTop: 100,
+      marginBottom: 100,
       borderColor: '#cc0033',
       borderWidth: '3px',
     },
  
     avatar: {
-      height: "10vw",
-      width: "10vw",
-
+      height: "13vw",
+      width: "13vw",
+      border: '7px solid lightgray',
+      transitionDuration: '0.5s'
     },
     textBodyLeft: {
       height: "9vw",
       width: "35vw",
       marginRight: 24,
-      marginTop: "4vw"
+      textAlign: 'right'
     },
     textBodyRight: {
       height: "9vw",
       width: "35vw",
       marginLeft: 24,
-      marginTop: "4vw"
+      textAlign: 'left',
     },
     jobName:{
       fontSize: 20,
-      fontWeight: '500',
+      fontWeight: '600',
       color: theme.palette.experience.jobName
     },
     jobTitle:{

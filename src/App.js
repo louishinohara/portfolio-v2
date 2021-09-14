@@ -11,7 +11,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import {GlobalStyles  } from './AppStyles';
-const isDark = false;
+const isDark = true;
 function App() {
   const store = createStore(
     rootReducer,

@@ -25,7 +25,8 @@ function ExperiencePage() {
                 img={job.img}
               />
             </Grid>
-            <LineTo zIndex={1} delay={true} borderWidth={2} from={experience.data[0].jobName} to={experience.data[experience.data.length-1].jobName} borderColor="#c5c5c5" />
+            <LineTo 
+              zIndex={1} delay={true} borderWidth={3} from={experience.data[0].jobName} to={experience.data[experience.data.length-1].jobName} borderColor="#c5c5c5" />
             </div>
           )
         }
