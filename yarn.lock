@@ -9940,6 +9940,14 @@
   "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   "version" "3.0.4"
 
+"react-lineto@^3.2.1":
+  "integrity" "sha512-1M3EgOgHDhMwcTC+I9XR8pi56lESj2JnbZ8BCM7vTl46dSZA+2tkQXOpZ/I216uGUWd24zd75nBl2uMrfamCYA=="
+  "resolved" "https://registry.npmjs.org/react-lineto/-/react-lineto-3.2.1.tgz"
+  "version" "3.2.1"
+  dependencies:
+    "prop-types" "15.7.2"
+    "react" "17.0.2"
+
 "react-modal@^3.8.1":
   "integrity" "sha512-WGuXn7Fq31PbFJwtWmOk+jFtGC7E9tJVbFX0lts8ZoS5EPi9+WWylUJWLKKVm3H4GlQ7ZxY7R6tLlbSIBQ5oZA=="
   "resolved" "https://registry.npmjs.org/react-modal/-/react-modal-3.12.1.tgz"
@@ -10176,6 +10184,14 @@
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
+  dependencies:
+    "loose-envify" "^1.1.0"
+    "object-assign" "^4.1.1"
+
+"react@17.0.2":
+  "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
+  "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
+  "version" "17.0.2"
   dependencies:
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"

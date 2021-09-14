@@ -36,7 +36,9 @@ function ExperienceComponent({ name, title, img, date, descr, left }) {
 
             <Grid item>
               <Text className={classes.jobTitle}>{title}</Text>
-            </Grid>            <Grid item>
+            </Grid>            
+            
+            <Grid item>
               <Text className={classes.jobDate} >{date}</Text>
             </Grid>
           </Grid>
@@ -80,7 +82,7 @@ const experienceComponentStyles = makeStyles((theme) =>
       marginTop: 50,
       marginBottom: 50,
       borderColor: '#cc0033',
-      borderWidth: '3px'
+      borderWidth: '3px',
     },
  
     avatar: {
