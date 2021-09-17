@@ -23,6 +23,7 @@ import AboutPage from "../pages/About/About";
 import ProjectsPage from "../pages/Projects/Projects";
 import SkillsPage from "../pages/Skills/Skills";
 import ExperiencePage from "../pages/Experience/Experience";
+import ExperienceComponentt from '../pages/Experience/Experiences';
 import ContactPage from "../pages/Contact/Contact";
 // https://material-ui.com/components/app-bar/#hide-app-bar
 // function HideOnScroll(props) {
@@ -67,6 +68,7 @@ function AppBody(props) {
       <ProjectsPage />
       <SkillsPage />
       <ExperiencePage />
+      <ExperienceComponentt />
       <ContactPage/>
       {/* <MyAppBar />
       <Text style={{ marginTop: 999 }}>aaa</Text> */}
